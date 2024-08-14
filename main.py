@@ -1,0 +1,17 @@
+from team import Team
+
+bar = Team.Employee("Бараш")
+los = Team.Employee("Лосяш")
+kro = Team.Employee("Крош")
+nol = Team.Employee("Нолик")
+sim = Team.Employee("Симка")
+my_team = Team("Смешарики", "Лучшая команда на свете", [bar, los, kro])
+my_second_team = Team('Фиксики', 'Плохая команда', [nol, sim])
+tm = my_team.get_task_mgr()
+tm2 = my_second_team.get_task_mgr()
+tm.new_task("Заботать всё с 8-часового веба по проге! :)", stat='In progress')
+tm.new_task("Выполнить всё из летнего бинго", stat='done')
+tm.new_task("Пройти курс по проге", stat='backlog')
+tm.new_task("Устроиться на работу")
+tm2.new_task("Починить всё", due='14.08.15', stat='backlog')
+tm.show_due_today()
